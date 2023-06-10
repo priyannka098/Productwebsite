@@ -6,8 +6,8 @@ const Card=(props)=>{
     const handleOnClick=()=>{
         const oldData2=props.oldData1 ;
         const currentCart=[...oldData2];
-        currentCart.push(props.data);
-        setCartData(currentCart);
+    
+        setCartData([...oldData2, props.data]);
     }
     return(
         <>
