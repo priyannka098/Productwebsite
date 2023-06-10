@@ -1,6 +1,14 @@
 import React from "react";
 
 const Card=(props)=>{
+
+    const setCartData=props.setData;
+    const handleOnClick=()=>{
+        const oldData2=props.oldData1 ;
+        const currentCart=[...oldData2];
+        currentCart.push(props.data);
+        setCartData(currentCart);
+    }
     return(
         <>
 <div className="card h-80  lg:w-72 max-lg:48 bg-base-100 shadow-xl hover:border-2">
@@ -14,7 +22,7 @@ const Card=(props)=>{
     <span className="font-semibold">$ {props.data.price}</span>
    </div>
     <div className="card-actions h-1/3 w-full p-2 flex justify-center">
-      <button className="w-24 text-xs p-2  bg-indigo-500 text-white font-bold">ADD TO CART</button>
+      <button  onClick={handleOnClick}className="w-24 text-xs p-2  bg-indigo-500 text-white font-bold">ADD TO CART</button>
     </div>
   </div>
 </div>
